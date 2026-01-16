@@ -1,115 +1,129 @@
 import { Link } from "wouter";
-import { Phone, Mail, MapPin, Instagram, Facebook, Linkedin, Twitter } from "lucide-react";
+import { Phone, Mail, MapPin, Facebook, Instagram, ArrowRight, MessageCircle } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#050505] border-t border-white/10 pt-16 pb-8">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+    <footer className="bg-[#0A192F]">
+      <div className="container mx-auto px-4 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Column */}
           <div className="space-y-6">
-            <div className="flex items-center gap-3">
-              <div className="relative w-10 h-10 flex items-center justify-center border border-[#D4AF37] rounded-full bg-black/50">
-                <span className="font-serif text-[#D4AF37] text-xl font-bold">C</span>
+            <Link href="/">
+              <div className="flex items-center gap-3 cursor-pointer group">
+                <div className="bg-white/10 p-2 rounded-lg backdrop-blur-sm border border-white/10">
+                  <img alt="Chaudhary Travels" className="h-16 w-auto object-contain" src="/images/logo.png" />
+                </div>
               </div>
-              <div className="flex flex-col">
-                <span className="text-white font-serif text-xl tracking-wide leading-none">CHAUDHARY</span>
-                <span className="text-[#D4AF37] text-xs tracking-[0.2em] uppercase">Travels</span>
-              </div>
-            </div>
-            <p className="text-white/60 text-sm leading-relaxed">
-              Experience the epitome of luxury travel with Chaudhary Travels. 
-              Premium chauffeur services tailored for those who demand excellence.
+            </Link>
+            <p className="text-[#8892B0] leading-relaxed pt-4">
+              Your personal logistics and mobile sanctuary provider. We don't just sell rides; we sell status, peace of mind, and productivity.
             </p>
-            <div className="flex gap-4">
-              {[Instagram, Facebook, Linkedin, Twitter].map((Icon, i) => (
-                <a key={i} href="#" className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center text-white/60 hover:text-[#D4AF37] hover:border-[#D4AF37] transition-all">
-                  <Icon className="w-4 h-4" />
-                </a>
-              ))}
+            <div className="flex gap-4 pt-2">
+              <a href="#" className="w-10 h-10 rounded-full bg-[#172A45] flex items-center justify-center text-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#0A192F] transition-all duration-300">
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a href="#" className="w-10 h-10 rounded-full bg-[#172A45] flex items-center justify-center text-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#0A192F] transition-all duration-300">
+                <Instagram className="w-5 h-5" />
+              </a>
             </div>
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h4 className="text-white font-serif text-lg mb-6">Quick Links</h4>
+          <div className="space-y-6">
+            <h4 className="text-xl font-serif font-bold text-[#D4AF37]">Quick Links</h4>
             <ul className="space-y-3">
-              {[
-                { name: "Home", href: "/" },
-                { name: "About Us", href: "/about" },
-                { name: "Services", href: "/services" },
-                { name: "Fleet", href: "/fleet" },
-                { name: "Contact", href: "/contact" },
-              ].map((link) => (
-                <li key={link.name}>
-                  <Link href={link.href}>
-                    <span className="text-white/60 hover:text-[#D4AF37] text-sm transition-colors cursor-pointer">
-                      {link.name}
-                    </span>
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link href="/" className="text-[#8892B0] hover:text-[#D4AF37] transition-colors flex items-center gap-2 group">
+                  <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" /> Home
+                </Link>
+              </li>
+              <li>
+                <Link href="/employee-transport" className="text-[#8892B0] hover:text-[#D4AF37] transition-colors flex items-center gap-2 group">
+                  <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" /> Employee Transport
+                </Link>
+              </li>
+              <li>
+                <Link href="/blogs" className="text-[#8892B0] hover:text-[#D4AF37] transition-colors flex items-center gap-2 group">
+                  <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" /> Blogs
+                </Link>
+              </li>
+              <li>
+                <Link href="/faq" className="text-[#8892B0] hover:text-[#D4AF37] transition-colors flex items-center gap-2 group">
+                  <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" /> FAQ's
+                </Link>
+              </li>
+              <li>
+                <Link href="/get-quote" className="text-[#8892B0] hover:text-[#D4AF37] transition-colors flex items-center gap-2 group">
+                  <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" /> Get Quote
+                </Link>
+              </li>
             </ul>
           </div>
 
           {/* Services */}
-          <div>
-            <h4 className="text-white font-serif text-lg mb-6">Our Services</h4>
+          <div className="space-y-6">
+            <h4 className="text-xl font-serif font-bold text-[#D4AF37]">Our Services</h4>
             <ul className="space-y-3">
-              {[
-                "Corporate Travel",
-                "Wedding Transportation",
-                "Airport Transfers",
-                "Employee Transport",
-                "Luxury Car Rentals",
-              ].map((service) => (
-                <li key={service} className="text-white/60 text-sm hover:text-[#D4AF37] transition-colors cursor-default">
-                  {service}
-                </li>
-              ))}
+              <li className="text-[#8892B0] hover:text-[#D4AF37] transition-colors cursor-pointer">Luxury Tempo Traveller</li>
+              <li className="text-[#8892B0] hover:text-[#D4AF37] transition-colors cursor-pointer">Corporate Bus Rental</li>
+              <li className="text-[#8892B0] hover:text-[#D4AF37] transition-colors cursor-pointer">Wedding Transportation</li>
+              <li className="text-[#8892B0] hover:text-[#D4AF37] transition-colors cursor-pointer">Employee Commute</li>
+              <li className="text-[#8892B0] hover:text-[#D4AF37] transition-colors cursor-pointer">Outstation Trips</li>
+              <li className="text-[#8892B0] hover:text-[#D4AF37] transition-colors cursor-pointer">Airport Transfers</li>
             </ul>
           </div>
 
           {/* Contact */}
-          <div>
-            <h4 className="text-white font-serif text-lg mb-6">Contact Us</h4>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-[#D4AF37] shrink-0 mt-0.5" />
-                <span className="text-white/60 text-sm">
-                  123 Luxury Lane, Business District,<br />New Delhi, India 110001
-                </span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-[#D4AF37] shrink-0" />
-                <a href="tel:+919540726566" className="text-white/60 text-sm hover:text-[#D4AF37] transition-colors">
-                  +91 95407 26566
-                </a>
-              </li>
-              <li className="flex items-center gap-3">
+          <div className="space-y-6">
+            <h4 className="text-xl font-serif font-bold text-[#D4AF37]">Contact Us</h4>
+            <div className="space-y-4">
+              <div className="flex items-start gap-3 text-[#8892B0]">
+                <MapPin className="w-5 h-5 text-[#D4AF37] shrink-0 mt-1" />
+                <p>A/28, Second Floor, Gali No 13, Mandawali Unchepar, East Delhi, Delhi, 110092</p>
+              </div>
+              <div className="flex flex-col gap-3">
+                <div className="flex items-center gap-3 text-[#8892B0]">
+                  <Phone className="w-5 h-5 text-[#D4AF37] shrink-0" />
+                  <a href="tel:9540726566" className="hover:text-white transition-colors">+91 95407 26566</a>
+                </div>
+                <div className="flex items-center gap-3 text-[#8892B0]">
+                  <Phone className="w-5 h-5 text-[#D4AF37] shrink-0" />
+                  <a href="tel:9540240009" className="hover:text-white transition-colors">+91 95402 40009</a>
+                </div>
+              </div>
+              <div className="flex items-center gap-3 text-[#8892B0]">
                 <Mail className="w-5 h-5 text-[#D4AF37] shrink-0" />
-                <a href="mailto:info@chaudharytravels.in" className="text-white/60 text-sm hover:text-[#D4AF37] transition-colors">
-                  info@chaudharytravels.in
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-white/40 text-xs">
-            © 2018 Chaudhary Travels. All rights reserved.
-          </p>
-          <div className="flex gap-6">
-            <Link href="/privacy">
-              <span className="text-white/40 hover:text-[#D4AF37] text-xs transition-colors cursor-pointer">Privacy Policy</span>
-            </Link>
-            <Link href="/terms">
-              <span className="text-white/40 hover:text-[#D4AF37] text-xs transition-colors cursor-pointer">Terms of Service</span>
-            </Link>
+                <a href="mailto:info@chaudharytravels.in" className="hover:text-white transition-colors">info@chaudharytravels.in</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+
+      {/* Bottom Bar */}
+      <div className="bg-[#050C18] py-6 border-t border-[#172A45]">
+        <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-[#8892B0]">
+          <div className="flex flex-col md:flex-row items-center gap-2 text-center md:text-left">
+            <p>© 2018 Chaudhary Travels. All rights reserved. <span className="text-xs font-bold text-green-500 ml-2 border border-green-500 px-1 rounded">v3.0 Live Fix</span></p>
+            <span className="hidden md:inline text-[#172A45]">|</span>
+            <p>GST: 07AZGPC2851E1ZR</p>
+          </div>
+          <div className="flex flex-wrap justify-center gap-6 mt-4 md:mt-0">
+            <Link href="/terms" className="hover:text-[#D4AF37] transition-colors">Terms & Conditions</Link>
+            <Link href="/privacy" className="hover:text-[#D4AF37] transition-colors">Privacy Policy</Link>
+          </div>
+        </div>
+      </div>
+
+      {/* WhatsApp Button */}
+      <a
+        href="https://wa.me/919540726566?text=Hi, I would like to get a quote for vehicle rental."
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg hover:scale-110 hover:shadow-xl transition-all z-50 group"
+      >
+        <MessageCircle className="w-7 h-7 text-white group-hover:animate-pulse" />
+      </a>
     </footer>
   );
 }
