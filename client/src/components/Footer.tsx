@@ -98,7 +98,7 @@ export default function Footer() {
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-white/40 text-xs">
-            © {new Date().getFullYear()} Chaudhary Travels. All rights reserved.
+            © 2018 Chaudhary Travels. All rights reserved.
           </p>
           <div className="flex gap-6">
             <Link href="/privacy">
